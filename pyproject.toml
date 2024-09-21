@@ -20,3 +20,4 @@ build-backend = "poetry.core.masonry.api"
 
 [tool.taskipy.tasks]
 test = "pytest tests -v"
+run = "streamlit run src/app.py"
