@@ -20,5 +20,5 @@ requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
 
 [tool.taskipy.tasks]
-test = "pytest tests -v"
+test = "PYTHONPATH=$(pwd) pytest tests -v"
 run = "streamlit run src/app.py"
