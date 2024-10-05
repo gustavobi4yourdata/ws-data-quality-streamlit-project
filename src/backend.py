@@ -3,7 +3,7 @@ from contrato import Vendas
 from dotenv import load_dotenv
 import os
 
-# load_dotenv(".env")
+load_dotenv(".env")
 
 # Lê as variáveis de ambiente
 POSTGRES_USER = os.getenv('POSTGRES_USER')
