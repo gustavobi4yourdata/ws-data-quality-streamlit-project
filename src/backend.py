@@ -1,19 +1,19 @@
 import pandas as pd
 from contrato import Vendas
-# from dotenv import load_dotenv
+from dotenv import load_dotenv
 import os
 
 # load_dotenv(".env")
 
 # Lê as variáveis de ambiente
-# POSTGRES_USER = os.getenv('POSTGRES_USER')
-# POSTGRES_PASSWORD = os.getenv('POSTGRES_PASSWORD')
-# POSTGRES_HOST = os.getenv('POSTGRES_HOST')
-# POSTGRES_PORT = os.getenv('POSTGRES_PORT')
-# POSTGRES_DB = os.getenv('POSTGRES_DB')
+POSTGRES_USER = os.getenv('POSTGRES_USER')
+POSTGRES_PASSWORD = os.getenv('POSTGRES_PASSWORD')
+POSTGRES_HOST = os.getenv('POSTGRES_HOST')
+POSTGRES_PORT = os.getenv('POSTGRES_PORT')
+POSTGRES_DB = os.getenv('POSTGRES_DB')
 
 # Cria a URL de conexão com o banco de dados
-#DATABASE_URL = f"postgresql://{POSTGRES_USER}:{POSTGRES_PASSWORD}@{POSTGRES_HOST}:{POSTGRES_PORT}/{POSTGRES_DB}"
+DATABASE_URL = f"postgresql://{POSTGRES_USER}:{POSTGRES_PASSWORD}@{POSTGRES_HOST}:{POSTGRES_PORT}/{POSTGRES_DB}"
 
 # Carrega as variáveis de ambiente
 
@@ -41,5 +41,5 @@ def process_excel(uploaded_file):
     except Exception as e:
         return df, False, f"Erro inesperado: {str(e)}"
     
-# def excel_to_sql(df):
-#     df.to_sql('vendas', con=DATABASE_URL, if_exists='replace', index=False)
+def excel_to_sql(df):
+    df.to_sql('vendas', con=DATABASE_URL, if_exists='replace', index=False)
